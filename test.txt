@@ -1,0 +1,45 @@
+| Nhóm            | Hàm                                        | Ý nghĩa               | Ví dụ                          |
+| --------------- | ------------------------------------------ | --------------------- | ------------------------------ |
+| So sánh giá trị | `assertEquals(expected, actual)`           | Hai giá trị bằng nhau | `assertEquals(5, sum);`        |
+|                 | `assertNotEquals(a, b)`                    | Hai giá trị khác nhau |                                |
+| Boolean         | `assertTrue(cond)`                         | Điều kiện đúng        | `assertTrue(user.isActive());` |
+|                 | `assertFalse(cond)`                        | Điều kiện sai         |                                |
+| Null check      | `assertNull(obj)`                          | Obj = null            |                                |
+|                 | `assertNotNull(obj)`                       | Obj ≠ null            |                                |
+| Object          | `assertSame(a,b)`                          | Cùng tham chiếu       |                                |
+|                 | `assertNotSame(a,b)`                       | Khác tham chiếu       |                                |
+| Collection      | `assertIterableEquals(a,b)`                | So sánh danh sách     |                                |
+| Exception       | `assertThrows(E.class, lambda)`            | Phải ném exception    |                                |
+| Timeout         | `assertTimeout(Duration.ofMillis(10), fn)` | Không quá thời gian   |                                |
+
+| Hàm                     | Ý nghĩa        | Ví dụ                                   |
+| ----------------------- | -------------- | --------------------------------------- |
+| `when(x).thenReturn(v)` | Trả về giá trị | `when(repo.findAll()).thenReturn(list)` |
+| `when(x).thenThrow(e)`  | Ném exception  |                                         |
+| `doNothing().when(x)`   | Không làm gì   |                                         |
+| `doThrow(e).when(x)`    | Ném lỗi (void) |                                         |
+
+| Hàm                          | Ý nghĩa         | Ví dụ                       |
+| ---------------------------- | --------------- | --------------------------- |
+| `verify(mock)`               | Có gọi          | `verify(repo).save(any());` |
+| `verify(mock, times(n))`     | Gọi n lần       |                             |
+| `verify(mock, never())`      | Không gọi       |                             |
+| `verifyNoInteractions(mock)` | Không tương tác |                             |
+
+| Matcher       | Ý nghĩa           |
+| ------------- | ----------------- |
+| `any()`       | bất kỳ object     |
+| `anyInt()`    | số nguyên bất kỳ  |
+| `anyString()` | chuỗi bất kỳ      |
+| `eq(value)`   | đúng bằng giá trị |
+| `isNull()`    | null              |
+| `notNull()`   | khác null         |
+
+| Annotation                            | Dùng cho                        |
+| ------------------------------------- | ------------------------------- |
+| `@Mock`                               | dependency giả                  |
+| `@InjectMocks`                        | class đang test                 |
+| `@Spy`                                | object thật + override một phần |
+| `@ExtendWith(MockitoExtension.class)` | bật Mockito JUnit5              |
+.
+
